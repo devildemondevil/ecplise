@@ -17,12 +17,12 @@ public class DBOper {
 			String pwd) throws ClassNotFoundException, SQLException,
 			InstantiationException, IllegalAccessException {
 		String DRIVER = "com.mysql.cj.jdbc.Driver";
-		String URL = "jdbc:mysql://" + server + ":3306/" + dbname + "?user=";
+		String URL = "jdbc:mysql://" + server + ":3306/" + dbname + "?user="+user+"&password="+pwd;
 
 		Class.forName(DRIVER);
 		
 		conn = DriverManager.getConnection(URL);
-		
+		System.out.print(conn);
 		return conn; 
 	}
 
@@ -69,7 +69,9 @@ public class DBOper {
 				}
 			}
 			
+			
 			rs = pstmt.executeQuery(); 
+			return rs;
 		} catch (SQLException e) {
 			
 			e.printStackTrace(); 

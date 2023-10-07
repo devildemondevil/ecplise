@@ -1,0 +1,42 @@
+package Dao.DaoImpl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import Dao.Dao;
+import Util.DBOper;
+
+public class DaoImpl implements Dao {
+
+	public boolean logIn(String username, String password) {
+		// TODO Auto-generated method stub
+
+		String sql = "select * from jiangjiang where  username=?  and password=?";
+		DBOper dboper = new DBOper();
+//		String server, String dbname, String user,String pwd
+		try {
+
+
+			dboper.getConn("localhost", "jiangjiang", "root", "123456");
+			ResultSet rs = dboper.executeQuery(sql, new String[]{username, password});
+			if (rs.next()) {
+				System.out.println("123");
+				return true;
+			} else {
+
+				return false;
+			}
+
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			dboper.closeAll();
+
+		}
+		return false;
+	}
+
+}

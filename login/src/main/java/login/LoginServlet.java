@@ -10,6 +10,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import Dao.Dao;
+import Dao.DaoImpl.DaoImpl;
+
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
@@ -25,10 +28,19 @@ public class LoginServlet extends HttpServlet {
 
 		PrintWriter out=resp.getWriter();
 
-		String name=req.getParameter("name");
-		System.out.println(name);
-		out.println(name);
-
+		String name=req.getParameter("username");
+		
+		String password=req.getParameter("password");
+		
+		Dao dao=(Dao)new DaoImpl();
+		
+		boolean re= dao.logIn(name,password);
+		if(re==false) {
+			out.write("false");
+		}else {
+			out.print("true");
+		}
+		
 	}
 
 	@Override
