@@ -71,4 +71,33 @@ public class DaoImpl implements Dao {
 		}
 	}
 
+	@Override
+	public int update(String username, String pwd, String newpwd)  {
+
+		String sql="update jiangjiang set password = ? , time=now()  where username = ? and password = ?";
+		DBOper dbOper=new DBOper();
+		try {
+
+			dbOper.getConn("localhost", "jiangjiang", "root", "123456");
+
+			int result= dbOper.executeUpdate(sql,new String[]{newpwd,username,pwd});
+
+			dbOper.closeAll();
+
+			return result;
+
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException(e);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} catch (InstantiationException e) {
+			throw new RuntimeException(e);
+		} catch (IllegalAccessException e) {
+			throw new RuntimeException(e);
+		}
+
+
+	}
+
+
 }
