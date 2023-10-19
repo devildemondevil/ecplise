@@ -99,5 +99,36 @@ public class DaoImpl implements Dao {
 
 	}
 
+	@Override
+	public int delete(String username, String pwd) {
+
+		String sql = "delete from jiangjiang where username=? and password=?";
+		DBOper dboper = new DBOper();
+
+		try {
+
+
+
+			dboper.getConn("localhost", "jiangjiang", "root", "123456");
+
+			return dboper.executeUpdate(sql,new String[]{username,pwd});
+
+
+
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException(e);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} catch (InstantiationException e) {
+			throw new RuntimeException(e);
+		} catch (IllegalAccessException e) {
+			throw new RuntimeException(e);
+		}finally {
+			dboper.closeAll();
+		}
+
+
+	}
+
 
 }
