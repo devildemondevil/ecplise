@@ -22,6 +22,50 @@ public class DeleteServlet extends HttpServlet {
 //        BufferedReader reader =req.getReader();
 //
         PrintWriter writer=resp.getWriter();
+
+
+        writer.println("<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                "    <title>Document</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "    <form action=\"LoginServlet\">\n" +
+                "    <input type=\"text\" value=\"\" name=\"name\" placeholder=\"input\">\n" +
+                "    <button type=\"submit\">submit</button>\n" +
+                "</form>\n" +
+                "</body>\n" +
+                "</html>");
+        writer.println("<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                "    <title>Document</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "    <form action=\"LoginServlet\">\n" +
+                "    <input type=\"text\" value=\"\" name=\"name\" placeholder=\"input\">\n" +
+                "    <button type=\"submit\">submit</button>\n" +
+                "</form>\n" +
+                "</body>\n" +
+                "</html>");
+        writer.println("<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                "    <title>Document</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "    <form action=\"LoginServlet\">\n" +
+                "    <input type=\"text\" value=\"\" name=\"name\" placeholder=\"input\">\n" +
+                "    <button type=\"submit\">submit</button>\n" +
+                "</form>\n" +
+                "</body>\n" +
+                "</html>");
 //        char[] chars=new char[1024];
 //        int len=0;
 //        while ((len=reader.read(chars))!=-1){
@@ -32,6 +76,12 @@ public class DeleteServlet extends HttpServlet {
 //            writer.write(chars,0,len);
 //
 //        }
+
+//        while(reader.r){
+//
+//
+//        }
+
 
 
 
