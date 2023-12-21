@@ -6,4 +6,5 @@
     <fullyQualifiedTypeName name="Dao.Dao"/>
     <fullyQualifiedTypeName name="Dao.DaoImpl.DaoImpl"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

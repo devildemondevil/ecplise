@@ -1,5 +1,6 @@
 package Cookie;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -21,10 +22,12 @@ public class LoginCookieServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.setCharacterEncoding("utf-8");
-        resp.setContentType("text/html;chatset=utf-8");
+        resp.setContentType("text/html;charset=utf-8");
 
         PrintWriter writer=resp.getWriter();
-
+        ServletContext servletContext=getServletContext();
+        String usern=servletContext.getInitParameter("userName");
+        String passw=servletContext.getInitParameter("passWord");
         String username="";
         String password="";
         //ªÒ»°cookie

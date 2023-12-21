@@ -54,9 +54,6 @@ public class DBOper {
 		}
 	}
 
-	/**
-	 * ִ��SQL��䣬���Խ��в�ѯ
-	 */
 	public ResultSet executeQuery(String preparedSql, String[] param) {
 		
 		try {
